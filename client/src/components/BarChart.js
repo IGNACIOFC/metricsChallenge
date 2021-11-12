@@ -28,11 +28,11 @@ function BarChart ({metrics, chart, setChart}) {
   
   console.log(metrics.minuteMetrics.labels)
   return(
-    <div>
-      <div>
-        <button onClick={()=>changeChart('1')}>1M</button>
-        <button onClick={()=>changeChart('2')}>1H</button>
-        <button onClick={()=>changeChart('3')}>1D</button>
+    <div className="chart_container">
+      <div className="buttons_container">
+        <button className="buttons" onClick={()=>changeChart('1')}>1M</button>
+        <button className="buttons" onClick={()=>changeChart('2')}>1H</button>
+        <button className="buttons" onClick={()=>changeChart('3')}>1D</button>
       </div>
       <Bar
       data={{
