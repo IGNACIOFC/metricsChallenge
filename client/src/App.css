@@ -34,6 +34,7 @@
 }
 
 .download {
+  margin: 0 2rem;
   height: 2rem;
   width: 10rem;
   background: #d83959; 
@@ -46,8 +47,34 @@
 .download:hover{
   background: rgba(202, 17, 54);
 }
-
+.price_container {
+  display: flex;
+  align-items: center;
+}
 .chart_container{
   height: 60vh;
   width: 60vw;
+}
+
+.average_container{
+  display: flex;
+  justify-content: center;
+}
+
+.average{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 200px;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.digit {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0;
 }

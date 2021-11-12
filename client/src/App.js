@@ -22,6 +22,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [metricsState, setMetricsState] = useState(metrics)
   const [chart, setChart] = useState('1')
+
   async function fetchMetrics() {
     try {
       setLoading(true)
@@ -36,20 +37,37 @@ function App() {
     fetchMetrics()
   }, [])
   
-  
+  const getAverages = () => {
+    let total = {}
+    total.minutesAverage = metricsState.minuteMetrics.values.reduce((a, b) => Number(a) + Number(b), 0);
+    total.hourlyAverage = metricsState.dailyMetrics.values.reduce((a, b) => Number(a) + Number(b), 0);
+    total.dailyAverage = metricsState.hourlyMetrics.values.reduce((a, b) => Number(a) + Number(b), 0);
+    return total;
+  }
+  let averages = getAverages();
+
   console.log(metricsState)
   return (
     <div className="App">
       <Book fetchMetrics={fetchMetrics}/>
       {loading ? 'loading' : 
-      <BarChart metrics={metricsState} chart={chart} setChart={setChart} />
-      }
-      <div>
-        <div>
+      <div className="metrics">
+        <BarChart metrics={metricsState} chart={chart} setChart={setChart} />
+        <div className="average_container">
+          <div className="average">
+            <p className="digit">${averages.minutesAverage}</p>
+            <p>Average sales in the last 30min</p>
+          </div>
+          <div className="average">
+            <p className="digit">${averages.hourlyAverage}</p>
+            <p>Average sales in the last day</p>
+          </div>
+          <div className="average">
+            <p className="digit">${averages.dailyAverage}</p>
+            <p>Average sales in the last week</p>
+          </div>
         </div>
-        <div></div>
-        <div></div>
-      </div>
+      </div>}
     </div>
   );
 }

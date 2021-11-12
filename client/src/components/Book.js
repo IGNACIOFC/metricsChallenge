@@ -25,9 +25,10 @@ function Book({fetchMetrics}) {
           Nulla pharetra nunc eget ante lobortis, vel consequat sem tincidunt. 
           Mauris vel ex magna. Cras auctor diam ipsum, 
           non pulvinar sem ultricies eget.</p>
-        <p className="price"><strong>Only $5</strong> 😊</p>
-        <div>
+        
+        <div className="price_container">
           <button className="download" onClick={() => postMetrics()}>DOWNLOAD</button>
+          <p className="price"><strong>Only $5</strong> 😊</p>
         </div>
       </div>
       <div class>
