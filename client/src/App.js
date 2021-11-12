@@ -44,6 +44,12 @@ function App() {
       {loading ? 'loading' : 
       <BarChart metrics={metricsState} chart={chart} setChart={setChart} />
       }
+      <div>
+        <div>
+        </div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 }
