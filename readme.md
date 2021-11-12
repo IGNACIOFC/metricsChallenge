@@ -5,11 +5,11 @@ Hi! I'm going to present you the result of my challenge:
 I was trying to find a good idea that can match the tech requisites and keep the business scope. With that in mind, I thought of selling an ebook for people interested in building HR Teams.
 
 
-Fulfilling the requirements, the metrics of downloads and sales are saved in a database and then the data is portrayed in a nice bar chart. At the same time we get the values of average sales per minute, hour and day.
+Fulfilling the requirements, the metrics of book sales are saved in a database and then the data is portrayed in a nice bar chart. At the same time, we get the values of average sales per minute, hour and day.
 
 Hope you like it!
 
-## Technologies used
+## Technologies
  
 - React
 - Node.js
