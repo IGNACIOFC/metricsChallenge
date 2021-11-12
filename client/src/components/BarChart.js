@@ -30,15 +30,17 @@ function BarChart ({metrics, chart, setChart}) {
   return(
     <div className="chart_container">
       <div className="buttons_container">
-        <button className="buttons" onClick={()=>changeChart('1')}>1M</button>
-        <button className="buttons" onClick={()=>changeChart('2')}>1H</button>
-        <button className="buttons" onClick={()=>changeChart('3')}>1D</button>
+        <button className="button" onClick={()=>changeChart('1')}>1M</button>
+        <button className="button" onClick={()=>changeChart('2')}>1H</button>
+        <button className="button" onClick={()=>changeChart('3')}>1D</button>
       </div>
       <Bar
       data={{
         labels: labels,
         datasets: [{
-          data: values
+          label: '$ Total Sales',
+          data: values,
+          backgroundColor: "#d83959",
         }]
       }}
       options={{
