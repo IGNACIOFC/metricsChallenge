@@ -22,18 +22,17 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [metricsState, setMetricsState] = useState(metrics)
   const [chart, setChart] = useState('1')
-  
-  useEffect(() => {
-    async function fetchMetrics () {
-      try {
-        setLoading(true)
-        const response = await axios.get("http://localhost:8000/api/metrics/now")
-        setMetricsState(response.data)
-        setLoading(false)
-      } catch (error) {
-        console.error(error)
-      }
+  async function fetchMetrics() {
+    try {
+      setLoading(true)
+      const response = await axios.get("http://localhost:8000/api/metrics/now")
+      setMetricsState(response.data)
+      setLoading(false)
+    } catch (error) {
+      console.error(error)
     }
+  }
+  useEffect(() => {
     fetchMetrics()
   }, [])
   
@@ -41,7 +40,7 @@ function App() {
   console.log(metricsState)
   return (
     <div className="App">
-      <Book />
+      <Book fetchMetrics={fetchMetrics}/>
       {loading ? 'loading' : 
       <BarChart metrics={metricsState} chart={chart} setChart={setChart} />
       }
