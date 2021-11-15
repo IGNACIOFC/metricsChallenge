@@ -28,7 +28,7 @@ function Book({fetchMetrics}) {
         
         <div className="price_container">
           <button className="download" onClick={() => postMetrics()}>DOWNLOAD</button>
-          <p className="price"><strong>Only $5</strong> 😊</p>
+          <p className="price"><strong>Only $9</strong> 😊</p>
         </div>
       </div>
       <div class>

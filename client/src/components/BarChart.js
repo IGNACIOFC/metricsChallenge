@@ -6,10 +6,6 @@ function BarChart ({metrics, chart, setChart}) {
   let labels = []
   let values = []
 
-  const changeChart = (value) => {
-    setChart(value)
-  }
-
   switch(chart) {
     case '1':
       labels = metrics.minuteMetrics.labels
@@ -25,8 +21,10 @@ function BarChart ({metrics, chart, setChart}) {
       break;
   }
 
-  
-  console.log(metrics.minuteMetrics.labels)
+  const changeChart = (value) => {
+    setChart(value)
+  }
+
   return(
     <div className="chart_container">
       <div className="buttons_container">
